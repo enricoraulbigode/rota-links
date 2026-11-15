@@ -1,0 +1,12 @@
+{
+  "name": "Rota Studio AI · Vendas",
+  "short_name": "Rota Vendas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2f2f1",
+  "theme_color": "#0d0e10",
+  "icons": [
+    { "src": "/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

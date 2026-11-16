@@ -15,21 +15,27 @@
 <link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&family=Michroma&display=swap">
 <link rel="preload" as="image" href="img/roti-3d.webp">
 <style>
 :root {
   --bg: #121315; --card: #1a1b1e; --line: rgba(255, 255, 255, .09); --txt: #e9e9ea; --mut: #9a9ba1; --ok: #3ddc84;
-  --silver: linear-gradient(135deg, #f4f4f5 0%, #c9cacd 38%, #8e9096 62%, #e6e7e9 100%);
+  --silver: linear-gradient(135deg, #f6f6f7, #bcbdc1);
+  --rota-bg-1: #2c2d31; --rota-bg-2: #1d1e21; --rota-bg-3: #121315; --rota-glow: 118, 52, 98;
 }
 * { box-sizing: border-box; margin: 0; padding: 0 }
 html { background: var(--bg) }
-body { min-height: 100vh; min-height: 100svh; background: var(--bg); color: var(--txt); font-family: 'Montserrat', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden }
+body { min-height: 100vh; min-height: 100svh;
+  background:
+    radial-gradient(ellipse 95% 62% at 0% 0%, rgba(var(--rota-glow), .58) 0%, rgba(var(--rota-glow), .355) 25%, rgba(var(--rota-glow), .18) 50%, rgba(var(--rota-glow), .055) 75%, rgba(var(--rota-glow), 0) 100%),
+    radial-gradient(rgba(255, 255, 255, .06) 1px, transparent 1.2px) 0 0/22px 22px,
+    radial-gradient(ellipse 80% 70% at 45% 40%, var(--rota-bg-1) 0%, var(--rota-bg-2) 55%, var(--rota-bg-3) 100%);
+  background-attachment: fixed; color: var(--txt); font-family: 'Montserrat', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden }
 a { color: inherit; text-decoration: none }
 img { display: block }
 .dots { position: fixed; inset: 0; pointer-events: none; background-image: radial-gradient(rgba(255, 255, 255, .10) 1px, transparent 1.2px); background-size: 16px 16px; -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 85%); mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 85%) }
 .brilho { position: fixed; left: -18vmax; top: -22vmax; width: 70vmax; height: 70vmax; pointer-events: none; background: radial-gradient(closest-side, rgba(220, 222, 228, .13), rgba(220, 222, 228, .04) 55%, transparent) }
-.kw { display: inline-block; background: var(--silver); color: #141518; font-weight: 900; text-transform: uppercase; padding: 2px 10px 4px; border-radius: 4px; transform: rotate(-3deg); box-shadow: 0 6px 18px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .8) }
+.kw { display: inline-block; background: var(--silver); color: #141517; font-weight: 900; text-transform: uppercase; padding: 2px 10px 4px; border-radius: 4px; transform: rotate(-3deg); box-shadow: 0 6px 18px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .8) }
 .it { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400 }
 .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mut) }
 
@@ -37,7 +43,7 @@ main { position: relative; z-index: 1; width: 100%; max-width: 440px; margin: 0 
 
 /* topo */
 .topo { display: flex; align-items: center; justify-content: space-between }
-.marca { display: flex; align-items: center; gap: 9px; font-weight: 900; font-size: 12.5px; letter-spacing: .14em; color: #f1f1f2 }
+.marca { display: flex; align-items: center; gap: 9px; font-family: 'Michroma', 'Montserrat', sans-serif; font-weight: 400; font-size: 11.5px; letter-spacing: .06em; color: #f1f1f2 }
 .marca img { width: 24px; height: 27px }
 
 /* Roti + balão */
@@ -88,8 +94,6 @@ footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 3
 </style>
 </head>
 <body>
-<div class="brilho" aria-hidden="true"></div>
-<div class="dots" aria-hidden="true"></div>
 
 <main>
   <header class="topo">
@@ -117,7 +121,7 @@ footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 3
       <span class="tx"><b>Falar no WhatsApp</b><small class="mono">Resposta rápida</small></span>
       <span class="seta" aria-hidden="true">↗</span>
     </a>
-    <a class="lk" href="/vendedores/">
+    <a class="lk" href="https://whatsapp.com/channel/0029Vb9o8EcHLHQS4Otktm1C" target="_blank" rel="noopener">
       <span class="selo" aria-hidden="true">R$ 200 / site</span>
       <span class="em" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M19 8v6M16 11h6"/></svg></span>
       <span class="tx"><b>Seja um vendedor(a)</b><small class="mono">Ganhe <span class="it">por indicação</span></small></span>
@@ -129,5 +133,9 @@ footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 3
 
   <footer class="mono"><span>Rota Studio AI</span><span>Uma empresa Apex Hub</span></footer>
 </main>
+<script>
+// luz da marca: troca sozinha no Natal (14–25/12) e no Ano Novo (26/12–01/01)
+(function () { var d = new Date(), m = d.getMonth() + 1, dia = d.getDate(); var c = m === 12 && dia >= 14 && dia <= 25 ? '150, 28, 30' : (m === 12 && dia >= 26) || (m === 1 && dia === 1) ? '170, 128, 50' : null; if (c) document.documentElement.style.setProperty('--rota-glow', c); })();
+</script>
 </body>
 </html>
